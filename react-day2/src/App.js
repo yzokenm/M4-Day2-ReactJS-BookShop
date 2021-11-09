@@ -11,14 +11,8 @@ function App() {
     <div>
     <MyNavbar />
     <Welcome />
-    <Container>
-      <Row>
-        <Col xs={12} md={4} lg={3}>
-          <LatestRelease />
-        </Col>
-      </Row>
-      </Container>
-      <MyFooter />
+    <LatestRelease />
+    <MyFooter />
     </div>
   );
 }

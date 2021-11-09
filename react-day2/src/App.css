@@ -5,6 +5,9 @@
   width: 100%;
   height: 50px;
 }
+.my-row{
+  background-color: #343A40;
+}
 .my-nav{
   position: fixed;
   top: 0;
