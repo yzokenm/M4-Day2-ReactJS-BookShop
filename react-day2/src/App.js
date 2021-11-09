@@ -10,7 +10,6 @@ function App() {
   return (
     <div>
     <MyNavbar />
-    <MyFooter />
     <Welcome />
     <Container>
       <Row>
@@ -19,6 +18,7 @@ function App() {
         </Col>
       </Row>
       </Container>
+      <MyFooter />
     </div>
   );
 }

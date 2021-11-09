@@ -1,7 +1,13 @@
 
 .my-row{
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+.my-nav{
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 50px;
 }

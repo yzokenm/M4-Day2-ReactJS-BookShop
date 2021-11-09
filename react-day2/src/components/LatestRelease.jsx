@@ -1,10 +1,10 @@
 import {Card, Button} from 'react-bootstrap'
 import books from '../data/horror.json'
 const LatestRelease =()=> (
-      <Card xs={12} md={4} lg={3}>
+      <Card>
       {
         books.map(book => (
-          <Card.Body>
+          <Card.Body key={book.asin}>
           <Card.Img src={book.img} />
             <Card.Title>{book.title}</Card.Title>
             <Card.Text>

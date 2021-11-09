@@ -5,18 +5,13 @@ const MyFooter =()=>(
 
       <Nav className="my-row justify-content-center" activeKey="/home">
           <Nav.Item>
-            <Nav.Link href="#">Active</Nav.Link>
+            <Nav.Link href="#">Contact</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="#">Link</Nav.Link>
+            <Nav.Link eventKey="#">FAQ</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="#">Link</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="#" disabled>
-              Disabled
-            </Nav.Link>
+            <Nav.Link eventKey="#">About</Nav.Link>
           </Nav.Item>
       </Nav>
 )
