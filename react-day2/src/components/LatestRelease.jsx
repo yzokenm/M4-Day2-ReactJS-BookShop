@@ -9,7 +9,7 @@ class LatestRelease extends Component {
       <Row>
           {
             books.map(book => (
-              <Col xs={4} md={6} lg={3}>
+              <Col xs={12} md={6} lg={3}>
                   <Card.Body key={book.asin}>
                     <Card.Img  style={{objectFit:'cover'}} src={book.img} />
                     <Card.Title>{book.title}</Card.Title>
