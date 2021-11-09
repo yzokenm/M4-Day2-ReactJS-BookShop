@@ -1,9 +1,9 @@
-import {Nav, Container, Row} from 'react-bootstrap'
+import {Nav} from 'react-bootstrap'
 
 
 const MyFooter =()=>(
-    <Row className="my-row d-flex justify-content-center">
-      <Nav className="justify-content-center" activeKey="/home">
+
+      <Nav className="my-row justify-content-center" activeKey="/home">
           <Nav.Item>
             <Nav.Link href="#">Active</Nav.Link>
           </Nav.Item>
@@ -19,6 +19,5 @@ const MyFooter =()=>(
             </Nav.Link>
           </Nav.Item>
       </Nav>
-    </Row>
 )
 export default MyFooter

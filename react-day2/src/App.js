@@ -4,6 +4,7 @@ import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import Welcome from './components/Welcome'
 import LatestRelease from './components/LatestRelease'
+import {Container, Row, Col} from 'react-bootstrap'
 
 function App() {
   return (
@@ -11,7 +12,13 @@ function App() {
     <MyNavbar />
     <MyFooter />
     <Welcome />
-    <LatestRelease />
+    <Container>
+      <Row>
+        <Col xs={12} md={4} lg={3}>
+          <LatestRelease />
+        </Col>
+      </Row>
+      </Container>
     </div>
   );
 }

@@ -1,14 +1,11 @@
-import {Container, Row, Col, Card, Button} from 'react-bootstrap'
+import {Card, Button} from 'react-bootstrap'
 import books from '../data/horror.json'
 const LatestRelease =()=> (
-  <Container>
-    <Row>
-      <Col xs={12} md={6} lg={3}>
-      <Card>
+      <Card xs={12} md={4} lg={3}>
       {
         books.map(book => (
           <Card.Body>
-          <Card.Img variant="top" src={book.img} />
+          <Card.Img src={book.img} />
             <Card.Title>{book.title}</Card.Title>
             <Card.Text>
               {book.category}
@@ -19,8 +16,6 @@ const LatestRelease =()=> (
       }
       </Card>
 
-      </Col>
-    </Row>
-  </Container>
+
 )
 export default LatestRelease
