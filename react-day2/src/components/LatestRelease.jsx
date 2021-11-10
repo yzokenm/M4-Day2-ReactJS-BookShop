@@ -1,11 +1,29 @@
-import {Card, Button, Container, Row, Col} from 'react-bootstrap'
+import {Card, Button, Container, Row, Col, Form} from 'react-bootstrap'
 import books from '../data/scifi.json'
 import {Component} from 'react'
 
 class LatestRelease extends Component {
+  state = {
+    queryBook:'',
+  }
+  filteredBooks(queryBook){
+    return( this.props.books.filter((book) => book.title.includes(queryBook)));
+  }
   render(){
     return(
       <Container>
+      <Form>
+      <Form.Group>
+      <Form.Control type="text" placeholder="Search..." value={this.state.queryBook}
+      onChange={(e)=>{
+        this.setState({queryBook: e.target.value})
+
+      }}
+
+
+      />
+      </Form.Group>
+      </Form>
       <Row>
           {
             books.map(book => (
