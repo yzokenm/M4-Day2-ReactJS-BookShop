@@ -72,8 +72,8 @@ class CommentArea extends Component {
                 <option>5</option>
               </Form.Control>
 
-              <Form.Label>Leave a Comment</Form.Label>
-              <Form.Control as="textarea" rows={3}
+              <Form.Label className="mt-4" >Leave a Comment</Form.Label>
+              <Form.Control  as="textarea" rows={3}
               value={this.state.comments.comment}
               onChange={(e) => {
                 this.handleComment('comment', e.target.value)
@@ -81,8 +81,9 @@ class CommentArea extends Component {
               required
 
                />
+               <Form.Label className="mt-4">Give an ID</Form.Label>
               <Form.Control
-                 type="number"
+                 type="text"
                  value={this.state.comments.elementId}
                  onChange={(e) => {
                      this.handleComment('elementId', e.target.value)
