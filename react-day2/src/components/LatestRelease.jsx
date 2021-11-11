@@ -1,4 +1,4 @@
-import {Card, Button, Container, Row, Col, Form} from 'react-bootstrap'
+import {Container, Row, Col, Form} from 'react-bootstrap'
 import books from '../data/scifi.json'
 import {Component} from 'react'
 import SingleBook from './SingleBook'
@@ -6,7 +6,6 @@ import SingleBook from './SingleBook'
 class LatestRelease extends Component {
   state = {
     queryBook:'',
-    selectedCard: false,
   }
   filteredBooks(queryBook){
     return(
@@ -31,6 +30,8 @@ class LatestRelease extends Component {
             this.filteredBooks(this.state.queryBook).map(books => (
               <Col xs={12} md={6} lg={3}>
                   <SingleBook bk={books} />
+
+
               </Col>
             ))
 
