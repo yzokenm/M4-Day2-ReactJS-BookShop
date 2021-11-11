@@ -7,7 +7,9 @@ class LatestRelease extends Component {
     queryBook:'',
   }
   filteredBooks(queryBook){
-    return( this.props.books.filter((book) => book.title.includes(queryBook)));
+    return(
+      books.filter((book) => book.title.toLowerCase().includes(queryBook))
+    );
   }
   render(){
     return(
@@ -26,13 +28,13 @@ class LatestRelease extends Component {
       </Form>
       <Row>
           {
-            books.map(book => (
+            this.filteredBooks(this.state.queryBook).map(books => (
               <Col xs={12} md={6} lg={3}>
-                  <Card.Body key={book.asin}>
-                    <Card.Img  style={{objectFit:'cover'}} src={book.img} />
-                    <Card.Title>{book.title}</Card.Title>
-                    <Card.Text>{book.category}</Card.Text>
-                    <Button variant="primary">${book.price}</Button>
+                  <Card.Body key={books.asin}>
+                    <Card.Img  style={{objectFit:'cover'}} src={books.img} />
+                    <Card.Title>{books.title}</Card.Title>
+                    <Card.Text>{books.category}</Card.Text>
+                    <Button variant="primary">${books.price}</Button>
                   </Card.Body>
                   </Col>
             ))
