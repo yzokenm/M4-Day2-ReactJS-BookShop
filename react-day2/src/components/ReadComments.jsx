@@ -33,8 +33,7 @@ class ReadComments extends Component{
     return(
       <>
       <div>
-      <CommentArea />
-      <CommentList commentsToShow={this.state.comments} />
+        <CommentList commentsToShow={this.state.comments} />
 
       </div>
       </>
