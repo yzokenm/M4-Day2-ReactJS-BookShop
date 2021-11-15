@@ -27,20 +27,14 @@ class LatestRelease extends Component {
         </Form.Group>
         </Form>
       <Row>
-          
+
           {
             this.filteredBooks(this.state.queryBook).map(books => (
               <Col xs={12} md={6} lg={3}>
                   <SingleBook bk={books} />
-
-
               </Col>
             ))
-
-
-
           }
-
         </Row>
         </Container>)
   }

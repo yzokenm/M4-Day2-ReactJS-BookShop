@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import {Card, Button} from 'react-bootstrap'
 import CommentArea from './CommentArea'
+import {Row, Col} from 'react-bootstrap'
 
 
 class SingleBook extends Component {
@@ -27,10 +28,7 @@ class SingleBook extends Component {
         <Button variant="primary">${this.props.bk.price}</Button>
         </Card.Body>
 
-        {
-          this.state.selectedCard &&
-          <CommentArea />
-        }
+      
       </>
 
     )
