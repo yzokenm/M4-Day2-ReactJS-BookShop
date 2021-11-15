@@ -18,11 +18,11 @@ function App() {
     <ReceiveComment />
     <WarningSign text="This is a Warning Alert " />
     <Row>
-      <Col xs={6} md={8} lg={8}>
+      <Col xs={12} md={8} lg={8}>
         <Mybadge color='danger' name ="Important!" />
         <LatestRelease />
       </Col>
-      <Col lg={3} className="mt-5">
+      <Col xs={4} md={4} lg={3} className="mt-5">
         <CommentArea />
       </Col>
     </Row>

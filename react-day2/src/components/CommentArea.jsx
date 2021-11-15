@@ -5,9 +5,9 @@ import {Form, Button} from 'react-bootstrap'
 class CommentArea extends Component {
   state = {
     comments: {
-      "comment": '',
-      "rate": 1,
-      "elementId": '',
+      comment: '',
+      rate: 1,
+      elementId: this.props.asin,
     }
   }
   handleComment = (commentArea, value) => {
@@ -35,14 +35,7 @@ class CommentArea extends Component {
 
       if(response.ok){
         alert("Posted")
-        this.setState({
-          comments:{
-            rate: 1,
-            comment: '',
-            elementId: 0,
-          }
 
-        })
       }else{
         alert("Error")
       }
@@ -83,7 +76,7 @@ class CommentArea extends Component {
                />
                <Form.Label className="mt-4">Give an ID</Form.Label>
               <Form.Control
-                 type="text"
+                 type="number"
                  value={this.state.comments.elementId}
                  onChange={(e) => {
                      this.handleComment('elementId', e.target.value)
