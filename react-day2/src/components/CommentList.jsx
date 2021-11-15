@@ -4,7 +4,8 @@ const CommentList = ({ commentsToShow }) => (
     <ListGroup style={{ color: 'black' }}>
         {
             commentsToShow.map(comment => (
-                <div>{comment.comment}</div>
+              <ListGroup.Item>{comment.comment}</ListGroup.Item>
+
             ))
         }
     </ListGroup>

@@ -30,7 +30,6 @@ class SingleBook extends Component {
         {
           this.state.selectedCard &&
           <ReadComments asin={this.props.bk.asin}
-
           />
         }
       </>

@@ -5,8 +5,8 @@ import {Form, Button} from 'react-bootstrap'
 class CommentArea extends Component {
   state = {
     comments: {
-      comment: '',
-      rate: 1,
+      comment: this.props.comment,
+      rate: this.props.rate,
       elementId: this.props.asin,
     }
   }

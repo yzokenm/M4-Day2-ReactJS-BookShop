@@ -19,7 +19,6 @@ class ReadComments extends Component{
          }
        }
      );
-     console.log(response);
      if (response.ok) {
        let comments = await response.json();
        this.setState({ comments: comments});
@@ -34,7 +33,9 @@ class ReadComments extends Component{
     return(
       <>
       <div>
-        <CommentList commentsToShow={this.state.comments} />
+      <CommentArea />
+      <CommentList commentsToShow={this.state.comments} />
+
       </div>
       </>
     )
