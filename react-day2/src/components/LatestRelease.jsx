@@ -6,6 +6,7 @@ import SingleBook from './SingleBook'
 class LatestRelease extends Component {
   state = {
     queryBook:'',
+    isLoading: true
   }
   filteredBooks(queryBook){
     return(
@@ -26,6 +27,7 @@ class LatestRelease extends Component {
         </Form.Group>
         </Form>
       <Row>
+          
           {
             this.filteredBooks(this.state.queryBook).map(books => (
               <Col xs={12} md={6} lg={3}>

@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Table from 'react-bootstrap/Table'
+import Spinner from 'react-bootstrap/Spinner'
 
 
 
@@ -26,12 +27,13 @@ fetchComments =async()=> {
     if(response.ok){
       let data = await response.json()
       this.setState({
-        postedComments : data
+        postedComments : data,
 
       })
     }
   } catch (e) {
     alert(e)
+
   }
 }
 
@@ -40,6 +42,7 @@ render() {
 
     return(
       <>
+
       {
         this.state.postedComments.map(comments => (
           <Table>
