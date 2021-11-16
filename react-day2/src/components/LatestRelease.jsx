@@ -1,26 +1,25 @@
 import {Container, Row, Col, Form} from 'react-bootstrap'
 import books from '../data/scifi.json'
-import {Component} from 'react'
+import {useState} from 'react'
 import SingleBook from './SingleBook'
 
-class LatestRelease extends Component {
-  state = {
-    queryBook:'',
-    isLoading: true
-  }
-  filteredBooks(queryBook){
+const LatestRelease =()=> {
+  const [queryBook, setQueryBook] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
+
+
+  const filteredBooks = (queryBook) => {
     return(
       books.filter((book) => book.title.toLowerCase().includes(queryBook))
     );
   }
-  render(){
     return(
       <Container>
         <Form>
         <Form.Group>
-        <Form.Control type="text" placeholder="Search..." value={this.state.queryBook}
+        <Form.Control type="text" placeholder="Search..." value={queryBook}
         onChange={(e)=>{
-          this.setState({queryBook: e.target.value})
+          setQueryBook(e.target.value)
 
         }}
         />
@@ -29,7 +28,7 @@ class LatestRelease extends Component {
       <Row>
 
           {
-            this.filteredBooks(this.state.queryBook).map(books => (
+            filteredBooks(queryBook).map(books => (
               <Col xs={12} md={6} lg={3}>
                   <SingleBook bk={books} />
               </Col>
@@ -37,7 +36,6 @@ class LatestRelease extends Component {
           }
         </Row>
         </Container>)
-  }
 
 }
 export default LatestRelease
