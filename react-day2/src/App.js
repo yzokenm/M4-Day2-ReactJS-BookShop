@@ -15,7 +15,6 @@ function App() {
     <div>
     <MyNavbar />
     <Welcome />
-    <ReceiveComment />
     <WarningSign text="This is a Warning Alert " />
     <Row>
       <Col xs={12} md={8} lg={8}>
