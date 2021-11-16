@@ -1,32 +1,34 @@
-import {Component} from 'react'
+import {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
 
-class CommentArea extends Component {
-  state = {
-    comments: {
-      comment: this.props.comment,
-      rate: this.props.rate,
-      elementId: this.props.asin,
-    }
-  }
-  handleComment = (commentArea, value) => {
-        this.setState({
-            comments: {
-                ...this.state.comments,
-                [commentArea]: value
-            }
-        })
+const CommentArea =(props)=> {
+  const [comments, setComment] = useState({
+        comment: '',
+        rate: 1,
+        elementId: props.asin
+
+  })
+
+  // state = {
+  //   comments: {
+  //     comment: '',
+  //     rate: 1,
+  //     elementId: this.props.asin,
+  //   }
+  // }
+  const handleComment = (commentArea, value) => {
+        setComment({...comments, [commentArea]: value })
     }
 
 
-   handleSubmit =async(e)=> {
+   const handleSubmit =async(e)=> {
     e.preventDefault()
-    console.log(this.state.comments)
+    console.log(comments)
     try {
       let response = await fetch('https://striveschool-api.herokuapp.com/api/comments', {
         method:"POST",
-        body: JSON.stringify(this.state.comments),
+        body: JSON.stringify(comments),
         headers: {
            'Content-type': 'application/json',
            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyODhmZWFhY2FhMjAwMTU1MmExNjEiLCJpYXQiOjE2MzY2NDIzOTcsImV4cCI6MTYzNzg1MTk5N30.8rTKp0SJcpuvBn84gsfwTWnfrbs47GmOZrCNbNejqbM"
@@ -44,15 +46,14 @@ class CommentArea extends Component {
     }
   }
 
-  render() {
     return(
       <>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <Form.Group>
               <Form.Label>Rate me</Form.Label>
-              <Form.Control as="select"  value={this.state.comments.rate}
+              <Form.Control as="select"  value={comments.rate}
               onChange={(e) => {
-                this.handleComment('rate', e.target.value)
+                handleComment('rate', e.target.value)
               }}
               required
 
@@ -67,9 +68,9 @@ class CommentArea extends Component {
 
               <Form.Label className="mt-4" >Leave a Comment</Form.Label>
               <Form.Control  as="textarea" rows={3}
-              value={this.state.comments.comment}
+              value={comments.comment}
               onChange={(e) => {
-                this.handleComment('comment', e.target.value)
+                handleComment('comment', e.target.value)
               }}
               required
 
@@ -77,9 +78,9 @@ class CommentArea extends Component {
                <Form.Label className="mt-4">Give an ID</Form.Label>
               <Form.Control
                  type="number"
-                 value={this.state.comments.elementId}
+                 value={comments.elementId}
                  onChange={(e) => {
-                     this.handleComment('elementId', e.target.value)
+                    handleComment('elementId', e.target.value)
                  }}
                  required
               />
@@ -88,6 +89,5 @@ class CommentArea extends Component {
         </Form>
       </>
     )
-  }
 }
 export default CommentArea
